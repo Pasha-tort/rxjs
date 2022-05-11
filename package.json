@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start:build": "tsc -w",
-    "start:run": "nodemon index.ts",
-    "start": "concurrently \"npm run start:build\" \"npm run start:run\"",
+    "start:runSwitchMap": "nodemon dist/switchMap.js",
+	"start:runConcatMap": "nodemon dist/concatMap.js",
+	"start:switchMap": "concurrently \"npm run start:build\" \"npm run start:runSwitchMap\"",
+	"start:concatMap": "concurrently \"npm run start:build\" \"npm run start:runConcatMap\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -18,6 +20,7 @@
     "typescript": "^4.6.4"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "rxjs": "^7.5.5"
   }
 }
